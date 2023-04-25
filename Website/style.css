@@ -2,16 +2,35 @@ body{
     padding: 5rem;
 }
 
-.navbar-brand {
-    margin: 0;
-}
-
 #top-NavBar{
-    padding: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    display: flex;
+    font-size:X-Large;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    font-size:large;
+main{
+    color:white;
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    max-height: 100rem;
+    max-width: 100rem;
+}
+
+#btnGetStartedbtn{
+    display: block;
+    margin: 10rem;
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+    padding-top: 10rem;
 }
