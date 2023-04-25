@@ -1,1 +1,17 @@
+body{
+    padding: 5rem;
+}
 
+.navbar-brand {
+    margin: 0;
+}
+
+#top-NavBar{
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    font-size:large;
+}
