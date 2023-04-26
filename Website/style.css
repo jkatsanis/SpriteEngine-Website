@@ -24,10 +24,10 @@ main{
     max-width: 100rem;
 }
 
-#btnGetStartedbtn{
-    display: block;
+#btnGetStarted{
+    display: flex;
     margin: 10rem;
-    text-align: center;
+    align-content: center;
 }
 
 .center{
