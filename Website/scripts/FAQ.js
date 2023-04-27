@@ -1,7 +1,6 @@
-// Initialize variables
-let chatHistory = [];
-let chatContainer = document.getElementById("chat-container");
-let messageInput = document.getElementById("message-input");
+let messageInput;
+let chatHistory;
+let chatContainer;
 
 // Function to add message to chat history and display it
 function displayMessage(message) {
@@ -11,6 +10,7 @@ function displayMessage(message) {
 
 // Function to send message
 function sendMessage() {
+    console.log((messageInput));
     let message = messageInput.value;
     if (message) {
         console.log(message);
@@ -19,4 +19,12 @@ function sendMessage() {
     }
 }
 
-document.addEventListener('DOMContentLoaded',(event) => console.log('done'));
+function init()
+{
+    console.log("done");
+    chatHistory = [];
+    chatContainer = document.getElementById("chat-container");
+    messageInput  = document.getElementById("message-input");
+}
+
+document.addEventListener('DOMContentLoaded',(event) => init());

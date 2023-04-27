@@ -7,6 +7,7 @@ body{
     padding-right: 5rem;
     display: flex;
     font-size:X-Large;
+    height: 4rem;
 }
 
 main{
@@ -16,7 +17,7 @@ main{
 #bg-video {
     filter: brightness(70%);
     position: fixed;
-    top: 2rem;
+    top: 1rem;
     right: 0;
     bottom: 0;
     min-width: 100%;
