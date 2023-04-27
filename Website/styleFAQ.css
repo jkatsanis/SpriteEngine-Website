@@ -1,3 +1,9 @@
 main{
     background-color: black;
+    min-height: 91vh;
+}
+
+#input{
+    position: fixed;
+    top:95%;
 }
