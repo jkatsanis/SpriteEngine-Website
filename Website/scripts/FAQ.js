@@ -1,11 +1,12 @@
 let messageInput;
 let chatHistory;
 let chatContainer;
+let userName;
 
 // Function to add message to chat history and display it
 function displayMessage(message) {
     chatHistory.push(message);
-    chatContainer.innerHTML += "<p>" + message + "</p>";
+    chatContainer.innerHTML += "<a class ='userName'>"+ userName + "</a>" + "<br/>" + "<a class='chatMessage'>" + message + "</a>"+ "<br/>"+ "<br/>";
 }
 
 // Function to send message
@@ -25,6 +26,7 @@ function init()
     chatHistory = [];
     chatContainer = document.getElementById("chat-container");
     messageInput  = document.getElementById("message-input");
+    userName = 'User123';
 }
 
 document.addEventListener('DOMContentLoaded',(event) => init());

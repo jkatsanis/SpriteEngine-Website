@@ -7,3 +7,19 @@ main{
     position: fixed;
     top:95%;
 }
+
+.chatMessage{
+    color: black;
+    background-color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+}
+
+.userName{
+    color: black;
+    background-color: white;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+}
