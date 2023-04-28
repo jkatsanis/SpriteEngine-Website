@@ -23,3 +23,8 @@ main{
     padding-right: 1rem;
     text-decoration: none;
 }
+
+#chat-container{
+    overflow-y:scroll;
+    height:800px;
+}
