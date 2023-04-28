@@ -1,6 +1,6 @@
 main{
     background-color: black;
-    min-height: 91vh;
+    min-height: 40rem;
 }
 
 #input{
@@ -26,5 +26,5 @@ main{
 
 #chat-container{
     overflow-y:scroll;
-    height:800px;
+    height:40rem;
 }
