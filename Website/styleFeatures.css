@@ -1,13 +1,38 @@
-main{
-    background-color: black;
-    height: 60rem;
+#version-text {
+    font-size: 120%;
+    font-weight: bolder;
+    color: gray;
+}  
+
+#editor-pic{
+    margin-top: 2rem;
+    height: 30rem;
 }
 
-.feature-container {
-    margin-top:3rem;
-    margin-left: 3rem;
+.search-bar {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    height: 40px;
+    width: 300px;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    box-shadow: inset 0px 0px 5px #d9d9d9;
 }
 
-.place-holder {
-    color: black;
+.search-bar input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 10px 50px 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.space {
+    height: 0.5rem;
+}
+
+.content-in-details {
+    margin-left: 2rem;
 }
