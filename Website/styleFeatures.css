@@ -33,6 +33,10 @@
     height: 0.5rem;
 }
 
+.space-2rem {
+    height: 2rem;
+}
+
 .content-in-details {
     margin-left: 2rem;
 }
