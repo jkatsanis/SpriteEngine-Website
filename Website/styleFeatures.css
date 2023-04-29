@@ -1,0 +1,13 @@
+main{
+    background-color: black;
+    height: 60rem;
+}
+
+.feature-container {
+    margin-top:3rem;
+    margin-left: 3rem;
+}
+
+.place-holder {
+    color: black;
+}
