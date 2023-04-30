@@ -1,7 +1,3 @@
-body{
-    padding: 5rem;
-    padding-bottom: 0rem;
-}
 
 #top-NavBar{
     padding-left: 5rem;
@@ -16,44 +12,10 @@ main{
 }
 
 #bg-video {
-    filter: brightness(70%);
-    position: fixed;
-    top: 1rem;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
-    max-height: 100rem;
-    max-width: 100rem;
-}
-
-#btnGetStarted{
-    margin-top: 2rem;
-    appearance: none;
-    background-color: #212529;
-    border: 2px solid black;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 0.5rem;
-    transition: all 0.3s ease-in-out;
-}
-
-#btnGetStarted:hover {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
-}
-.center{
-    text-align: center;
-    padding-top: 10rem;
-}
-
-.center-container {
-    text-align: center;
-
+    margin-top: -2rem;
+    filter: brightness(30%);
+    width: 100%;
+    height: 100%;
 }
 
 .background-text {
@@ -63,7 +25,9 @@ main{
 }  
 
 .all-content-container{
-    margin-left: 2rem;
+    width: 90rem;
+    margin-top: 5rem;
+    margin-left: 7rem;
 }
 
 summary {    
@@ -92,4 +56,57 @@ summary {
     padding: 10px 50px 10px 20px;
     font-size: 16px;
     background-color: transparent;
+}
+
+.main-info-container {
+    margin-top: 40rem;
+}
+
+.starter-text {
+    font-weight: bolder;
+    font-size: 250%;
+    width: 100%;
+    text-align: center;
+    filter: brightness(1000%);
+
+    text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+nav ul li:hover {
+    background: rgb(160, 158, 158);
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-get-stared{
+    filter: brightness(200%);
+    margin-top: 2rem;
+    background-color: #6d7071;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-get-stared:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.2);
+}
+
+.background-text-starter {
+    filter: brightness(100%);
+    color: rgb(178, 173, 173);
+}
+
+.info-container {
+    width: 90rem;
+    position: relative;
+    bottom: 13rem;
+    margin-left: 7rem;
+}
+
+.main-text {
+    text-align: center; 
+    position: relative; 
+    bottom: 40rem;
 }
