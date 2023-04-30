@@ -50,3 +50,21 @@ main{
     text-align: center;
 
 }
+
+.background-text {
+    font-size: 120%;
+    font-weight: bolder;
+    color: gray;
+}  
+
+.all-content-container{
+    margin-left: 2rem;
+}
+
+summary {    
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    background-color: #ddd;
+    padding: 5px;
+}

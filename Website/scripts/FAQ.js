@@ -27,7 +27,6 @@ function init()
     chatContainer = document.getElementById("chat-container");
     messageInput  = document.getElementById("message-input");
     userName = 'User123';
-    chatContainer.innerHTML += "<h3>" + "FAQ Chat" + "</h3>"
 }
 
 document.addEventListener('DOMContentLoaded',(event) => init());

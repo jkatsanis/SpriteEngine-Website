@@ -1,13 +1,3 @@
-main{
-    background-color: black;
-    min-height: 40rem;
-}
-
-#input{
-    position: fixed;
-    top:95%;
-}
-
 .chatMessage{
     color: black;
     background-color: white;
@@ -17,14 +7,7 @@ main{
 }
 
 .userName{
-    color: black;
-    background-color: white;
     padding-left: 1rem;
     padding-right: 1rem;
     text-decoration: none;
-}
-
-#chat-container{
-    overflow-y:scroll;
-    height:40rem;
 }
