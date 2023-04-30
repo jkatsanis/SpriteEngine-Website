@@ -11,7 +11,6 @@ function displayMessage(message) {
 
 // Function to send message
 function sendMessage() {
-    console.log((messageInput));
     let message = messageInput.value;
     if (message) {
         console.log(message);
@@ -22,11 +21,16 @@ function sendMessage() {
 
 function init()
 {
-    console.log("done");
     chatHistory = [];
     chatContainer = document.getElementById("chat-container");
     messageInput  = document.getElementById("message-input");
     userName = 'User123';
+
+    messageInput.addEventListener('keypress', function(event) {
+        if (event.keyCode === 13) {
+          sendMessage();
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded',(event) => init());
