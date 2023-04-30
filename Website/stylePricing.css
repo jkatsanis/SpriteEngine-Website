@@ -1,0 +1,60 @@
+.pricing-container {
+    text-align: center;
+}
+
+.box {
+    margin-top: 2rem;
+    margin-right: 5rem;
+    text-align: left;
+    display: inline-block;
+    width: 20rem;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.box:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+.inline-box img {
+    display: inline-block;
+}
+
+.inline-box p {
+    display: inline-block;
+}
+
+.plan-desc {
+    font-size: 120%;
+    font-weight: bold;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+
+.centered-items {
+    margin-left: 2rem
+}
+
+.invinsible {
+    color: white;
+}
+
+.get-plan-button {
+    font-size: 90%;
+    font-weight: bold;
+    font-family: monospace;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    border: none;
+    background-color:aqua;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.get-plan-button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
