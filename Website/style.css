@@ -82,7 +82,7 @@ nav ul li:hover {
 .btn-get-stared{
     filter: brightness(200%);
     margin-top: 2rem;
-    background-color: #6d7071;
+    background-color: #313334;
     border-radius: 5px;
     padding: 5px;
     transition: all 0.3s ease-in-out;
@@ -90,7 +90,7 @@ nav ul li:hover {
 
 .btn-get-stared:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .background-text-starter {
@@ -109,4 +109,26 @@ nav ul li:hover {
     text-align: center; 
     position: relative; 
     bottom: 40rem;
+}
+
+.main-info {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 150%;
+}
+
+.link-info {  
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 150%;
+    position: relative;
+    left: 0.4rem;
+    top: 0.2rem;
+}
+
+.get-started-link {
+    color: black;
+    text-decoration: none;
+}
+
+.get-started-link:hover {
+    color: white;
 }
