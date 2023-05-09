@@ -20,6 +20,7 @@ document.addEventListener('keydown', (e) => {
         document.querySelectorAll('.pipePiece').forEach((e) => {
             e.remove();
         });
+        score_val.innerHTML = 0;
         img.style.display = 'block';
         game_state = 'Play';
         message.innerHTML = " ";
@@ -45,6 +46,7 @@ function play(){
                     if (bird_props.left < pipePiece_props.left + pipePiece_props.width && bird_props.left + bird_props.width > pipePiece_props.left && bird_props.top < pipePiece_props.top + pipePiece_props.height && bird_props.top + bird_props.height > pipePiece_props.top) {
                         game_state = 'End';
                         message.innerHTML = 'Game Over'+ '<br>Press Enter To Restart';
+                        score_val.innerHTML = 0;
                         message.classList.add('messageStyle');
                         return;
                     } else {

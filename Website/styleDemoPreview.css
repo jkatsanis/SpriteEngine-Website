@@ -1,7 +1,6 @@
 .previewPic{
-
-    border-radius: 10rem;
+    border-radius: 2rem;
     border-color: black;
     border-style: solid;
-    box-shadow: gray;
+    box-shadow: 0.7rem 0.7rem 1rem gray;
 }
