@@ -19,13 +19,13 @@ main{
 }
 
 .background-text {
-    font-size: 120%;
+    font-size: 100%;
     font-weight: bolder;
     color: gray;
 }  
 
 .all-content-container{
-    width: 90rem;
+    width: 80rem;
     margin-top: 5rem;
     margin-left: 7rem;
 }
@@ -99,7 +99,7 @@ nav ul li:hover {
 }
 
 .info-container {
-    width: 90rem;
+    width: 80rem;
     position: relative;
     bottom: 13rem;
     margin-left: 7rem;
