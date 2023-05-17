@@ -1,7 +1,7 @@
 
 .background {
-    height: 60rem;
-    width: 119.5rem;
+    height: 46.5rem;
+    width: 96rem;
     background: url('pictures/background.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -30,7 +30,7 @@
     color: black;
     top: 50%;
     left: 50%;
-    font-size: 4em;
+    font-size: 4rem;
     transform: translate(-50%, -50%);
     text-align: center;
 }
@@ -42,8 +42,8 @@
 .score {
     position: fixed;
     z-index: 10;
-    height: 10vh;
-    font-size: 10vh;
+    height: 3rem;
+    font-size: 3rem;
     font-weight: 100;
     color: black;
     top: 10%;
