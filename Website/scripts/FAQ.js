@@ -19,6 +19,11 @@ function sendMessage() {
     }
 }
 
+function createTestThread()
+{
+
+}
+
 function init()
 {
     chatHistory = [];

@@ -11,3 +11,45 @@
     padding-right: 1rem;
     text-decoration: none;
 }
+
+.faq-container {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+.faq-container-style {
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+#new-question-button {
+    border: transparent;
+    padding: 0.5rem;
+    margin-right: 2rem;
+}
+
+.thread-container {
+    margin-left: 1rem;
+}
+
+.ctn-text {
+    margin-top: 1rem;
+}
+
+.question-style {
+    font-weight: bolder;
+    font-size: 110%;
+}
+
+.creation-style {
+    font-weight: 600;
+    margin-top: -1rem;
+    color: grey;
+}
+
+.author-style {
+    float: right;
+    margin-top: -3.2em;
+    margin-right: 5rem;
+}

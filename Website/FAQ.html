@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styleFAQ.css">
   <script src="scripts/FAQ.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylePricing.css">
 </head>
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="top-NavBar">
@@ -43,12 +44,23 @@
     <p class="background-text">Contact: katsanis@18gmai.com</p>
     <h1>Faq</h1>
     <hr>
-    <div id="chat-container"></div>
-      <div class="search-bar">
-        <input type="text" id="message-input" placeholder="Ask a question...">
+    <div class="faq-container faq-container-style">
+      <div class="search-bar" style="margin-left: 1rem">
+        <input type="text" id="feature-searcher" onkeyup="search()" placeholder="Search for questions.." >
       </div>
+      <p class="inline-box ctn-text">5 open ✘</p>
+      <p class="inline-box ctn-text">6 closed &#x2713;</p>
+      <button class="inline-box get-plan-button" id="new-question-button" onclick="createTestThread()">New Thread</button>
     </div>
-<footer>
-</footer>
+    <br>
+    <div class="faq-container-style">
+        <div class="thread-container">
+          <p class="ctn-text question-style">Why is the engine so shit?</p>
+          <p class="inline-box ctn-text creation-style">#1 | Created at 19.05.2022</p>
+        </div>
+      <p class="inline-box author-style">y4ni</p>
+    </div>
+    <br>
+
 </body>
 </html>
