@@ -1,3 +1,33 @@
 main{
     background-color: black;
 }
+.register-btn{
+    filter: brightness(200%);
+    margin-top: 0.3rem;
+    background-color: #313334;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    transform: scale(1.1);
+}
+
+.white-text{
+    color: white;
+}
+
+.LogIn{
+    text-align: left;
+    position: relative;
+    bottom: 40rem;
+    margin-top: 1rem;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+.margin-top{
+    margin-top: 1rem;
+}

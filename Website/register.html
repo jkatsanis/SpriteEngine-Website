@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game Engine - Your Key to Game Development</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylelogIn.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="scripts/ACCOUNTS.js"></script>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="top-NavBar">
+        <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <img src="pictures/Sprite1.png" width="50rem" >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="features.html">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="pricing.html">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="FAQ.html">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="logIn.html">Log in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="demo.html">Demo</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<body>
+<video autoplay muted loop id="bg-video">
+    <source src="videos/backgroundTRY2.mp4" type="video/mp4">
+</video>
+<div class="main-text">
+    <p class="white-text">
+        Already have an account?
+    </p>
+    <a class="btn-primary btn" href="logIn.html">Log In</a>
+</div>
+
+<div class="LogIn">
+    <form class="container" onsubmit="handleSubmit()">
+        <div class="form-group">
+            <label class="white-text" for="usrReg">Username</label>
+            <input type="text" class="form-control" id="usrReg">
+        </div>
+        <div class="form-group">
+            <label class="white-text" for="pwdReg">Password</label>
+            <input type="password" class="form-control" id="pwdReg">
+        </div>
+        <button type="submit" class="btn btn-primary margin-top">Submit</button>
+    </form>
+</div>
+
+<footer>
+
+</footer>
+</body>
+</html>
