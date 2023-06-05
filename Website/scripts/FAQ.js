@@ -1,41 +1,58 @@
-let messageInput;
-let chatHistory;
-let chatContainer;
-let userName;
-
-// Function to add message to chat history and display it
-function displayMessage(message) {
-    chatHistory.push(message);
-    chatContainer.innerHTML += '<div class ="chat-message">' + "<a class ='userName'>"+ userName + "</a>" + "<br/>" + "<a class='chatMessage'>" + message + "</a>"+ "<br/>"+ "<br/>" +"</div>";
-}
-
-// Function to send message
-function sendMessage() {
-    let message = messageInput.value;
-    if (message) {
-        console.log(message);
-        displayMessage(message);
-        messageInput.value = "";
-    }
-}
-
-function createTestThread()
-{
-
-}
 
 function init()
 {
-    chatHistory = [];
-    chatContainer = document.getElementById("chat-container");
-    messageInput  = document.getElementById("message-input");
-    userName = 'User123';
 
-    messageInput.addEventListener('keypress', function(event) {
-        if (event.keyCode === 13) {
-            sendMessage();
-        }
-    });
+    for(let i = 1; i < 100; i++)
+    {
+        let thread = new Thread(`${"Hello"}`,  "y4ni");
+        thread.render();
+    }
+}
+
+class Thread
+{
+    static threads = 0;
+    author;
+    dateMessage;
+    question;
+
+    constructor(question, autor)
+    {
+        this.question = question;
+        this.author = autor;
+        Thread.threads++;
+        this.dateMessage = `${Thread.threads}`;
+
+    }
+
+    render()
+    {
+        const currentDate = new Date();
+
+        const day = String(currentDate.getDay());
+        const month = String(currentDate.getMonth());
+        const year = currentDate.getFullYear();
+        const dateString = `${day}.${month}.${year}`;
+
+        const html = `
+          <div style="margin-top: 0.5rem">
+
+          <div class="space-0-5rem"></div>
+          <div class="faq-container-style">
+            <div class="thread-container">
+              <p class="ctn-text question-style">${this.question}</p>
+              <p class="inline-box ctn-text creation-style">#${this.dateMessage} | Created at 19.05.2022</p>
+            </div>
+            <p class="inline-box author-style">y4ni</p>
+          </div>
+          <div style="margin-top: 0.5rem">
+            `;
+
+        let all = document.getElementById("insert-here");
+
+        all.innerHTML += html;
+
+    }
 }
 
 document.addEventListener('DOMContentLoaded',(event) => init());
