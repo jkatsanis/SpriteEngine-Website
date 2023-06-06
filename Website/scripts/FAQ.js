@@ -1,14 +1,4 @@
 
-function init()
-{
-
-    for(let i = 1; i < 100; i++)
-    {
-        let thread = new Thread(`${"Hello"}`,  "y4ni");
-        thread.render();
-    }
-}
-
 class Thread
 {
     static threads = 0;
@@ -54,5 +44,3 @@ class Thread
 
     }
 }
-
-document.addEventListener('DOMContentLoaded',(event) => init());

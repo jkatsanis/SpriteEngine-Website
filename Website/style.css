@@ -132,3 +132,13 @@ nav ul li:hover {
 .get-started-link:hover {
     color: white;
 }
+
+#account-text {
+    margin-top: 1.2rem;
+    font-size: medium;
+    font-weight: bolder;
+    filter: brightness(1000%);
+
+    text-transform: uppercase;
+    font-family:Arial, Helvetica, sans-serif;
+}

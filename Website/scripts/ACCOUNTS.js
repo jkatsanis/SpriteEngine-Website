@@ -1,6 +1,9 @@
 
 const url = 'http://localhost:3000/user';
 
+let currentAccount = undefined;
+let accountTextField = undefined;
+
 function handleSubmit(){
     let username = document.getElementById("usrReg");
     let password = document.getElementById("pwdReg");
@@ -33,6 +36,8 @@ function handleLogIn()
         {
             let b = "Succesfully logged in as " + username;
             alert(b);
+            currentAccount = new Account(username, password);
+            updateCurrentAccount();
         }
         else
         {
@@ -72,3 +77,34 @@ class Account{
         this.password = password;
     }
 }
+
+function updateCurrentAccount()
+{
+    if(currentAccount !== undefined)
+    {
+        accountTextField.textContent = "Logged in as " + currentAccount.id;
+        const jsonString = JSON.stringify(currentAccount);
+        localStorage.setItem('personData', jsonString);
+    }
+    else
+    {
+        accountTextField.textContent = "Not logged in";
+    }
+}
+
+function init()
+{
+    const storedData = localStorage.getItem('personData');
+    const parsedData = JSON.parse(storedData);
+
+    if(parsedData !== null && parsedData !== undefined)
+    {
+        currentAccount = new Account(parsedData.id, parsedData.password);
+    }
+
+
+    accountTextField = document.getElementById("account-text");
+    updateCurrentAccount();
+}
+
+document.addEventListener('DOMContentLoaded',(event) => init());
