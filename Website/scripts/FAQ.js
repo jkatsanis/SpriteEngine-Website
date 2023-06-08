@@ -1,18 +1,32 @@
 let openThreads = 0;
 let threads = [];
+let current_thread = undefined;
 
 function initThreads(){
     getAllThreads().then( (data) => {
         for(let i = 0; i < data.length; i++)
         {
-            let thred = new Thread(data[i].question, data[i].author);
+            let thred = new Thread(data[i].question, data[i].author, data[i].questionContent);
             thred.dateMessage = data[i].dateMessage;
             thred.createdAt = data[i].createdAt;
             thred.render();
             threads.push(thred);
             openThreads = i;
         }
+        addThreadEventListener();
     })
+}
+
+function addThreadEventListener()
+{
+    let x = document.getElementsByClassName("thread");
+    for(let i = 0; i < x.length; i++)
+    {
+        x[i].addEventListener("click", function ()
+        {
+            enterThread(threads[i]);
+        })
+    }
 }
 
 function createThread(){
@@ -31,16 +45,22 @@ function cancelSubmit()
 
 function submit()
 {
-    let title = document.getElementById("title-input").value;
-    let thread = new Thread(title, currentAccount.id);
+    let title = document.getElementById("title-input");
+    let content = document.getElementById("issue-input");
+
+    let thread = new Thread(title.value, currentAccount.id, content.value);
     thread.render();
     modifyThreadDisplayer('none');
     increaseOpenCounter();
     threads.push(thread);
 
+    addThreadEventListener();
     addQuestionToDataBase(thread, () => {
         console.log("Nice");
     })
+
+    title.value = "";
+    content.value = "";
 }
 
 function increaseOpenCounter(){
@@ -67,6 +87,16 @@ function modifyThreadDisplayer(display){
     current.style.display = a;
 }
 
+function modifyThreadDisplayerBasesOnCurrentThread(display)
+{
+    
+
+    let a = display === 'none' ? 'block' : 'none';
+
+    let current = document.getElementById("faq-display");
+    current.style.display = a;
+}
+
 function searchForThread()
 {
     let threadElements = document.getElementsByClassName("thread");
@@ -86,6 +116,16 @@ function searchForThread()
     }
 }
 
+function enterThread(thread)
+{
+    let title = document.getElementById("title");
+
+    let title_string = thread.question;
+
+    title.textContent = title_string;
+    current_thread = thread;
+}
+
 class Thread
 {
     static threads = 0;
@@ -93,9 +133,11 @@ class Thread
     dateMessage;
     question;
     createdAt;
+    questionContent;
 
-    constructor(question, autor)
+    constructor(question, autor, questionContent)
     {
+        this.questionContent = questionContent;
         this.question = question;
         this.author = autor;
         Thread.threads++;
@@ -114,6 +156,8 @@ class Thread
 
     render()
     {
+        let thread = this;
+
         const html = `
             <div style="margin-top: 0.5rem" class="thread">
               <div class="space-0-5rem"></div>
@@ -128,10 +172,8 @@ class Thread
               <div style="margin-top: 0.5rem">
             </div>
             `;
-
         let all = document.getElementById("insert-here");
 
         all.innerHTML += html;
-
     }
 }
