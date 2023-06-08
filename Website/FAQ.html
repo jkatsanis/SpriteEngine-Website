@@ -4,11 +4,12 @@
   <title>Game Engine - Your Key to Game Development</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="styleFAQ.css">
   <script src="scripts/ACCOUNTS.js"></script>
   <script src="scripts/FAQ.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="stylePricing.css">
 </head>
 <header>
@@ -44,17 +45,35 @@
 <body>
 <div class="all-content-container">
   <p class="background-text">Contact: katsanis@18gmai.com</p>
-  <h1>Faq</h1>
+  <h1 id="title">Faq</h1>
   <hr>
-  <div class="faq-container faq-container-style">
-    <div class="search-bar" style="margin-left: 1rem">
-      <input type="text" id="feature-searcher" onkeyup="search()" placeholder="Search for questions.." >
+  <div id="faq-display">
+    <div class="faq-container faq-container-style">
+      <div class="search-bar" style="margin-left: 1rem">
+        <input type="text" id="feature-searcher" onkeyup="search()" placeholder="Search for questions.." >
+      </div>
+      <p class="inline-box ctn-text">5 open ✘</p>
+      <p class="inline-box ctn-text">6 closed &#x2713;</p>
+      <button class="inline-box get-plan-button" id="new-question-button" onclick="createThread()">New Thread</button>
     </div>
-    <p class="inline-box ctn-text">5 open ✘</p>
-    <p class="inline-box ctn-text">6 closed &#x2713;</p>
-    <button class="inline-box get-plan-button" id="new-question-button" onclick="createTestThread()">New Thread</button>
+    <div id="insert-here"></div>
   </div>
-  <div id="insert-here"></div>
+  <div id="faq-new-thread">
+    <div id="create-content">
+      <h1>Title:</h1>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Title" id="title-input">
+      </div>
+      <h1>Issue:</h1>
+      <div class="form-group">
+        <textarea type="text" class="form-control" placeholder="Issue" id="issue-input"></textarea>
+      </div>
+      <br>
+      <button class="get-plan-button btm-btn" id="submit-btn" onclick="submit()">Sumbit</button>
+      <button class="get-plan-button inline-box btm-btn" id="cancel-btn" onclick="cancelSubmit()">Cancel</button>
+
+    </div>
+  </div>
 
 </body>
 </html>

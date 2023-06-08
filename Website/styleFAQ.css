@@ -53,3 +53,34 @@
     margin-top: -3.2em;
     margin-right: 5rem;
 }
+.closed-style {
+    float: right;
+    margin-top: -3.2em;
+    margin-right: 41.5rem;
+}
+
+#faq-display {
+    display: block;
+}
+
+#faq-new-thread {
+    height: 31rem;
+    width: 100%;
+    border: 2px solid black;
+    display: none;
+}
+
+#create-content {
+    margin: 1rem;
+}
+
+#issue-input {
+    width: 100%; /* Adjust the width as needed */
+    height: 15rem; /* Adjust the height as needed */
+    resize: none;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
+}

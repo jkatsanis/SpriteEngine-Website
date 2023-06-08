@@ -86,6 +86,8 @@ function logoutButton()
 
 function updateCurrentAccount()
 {
+    let btn = document.getElementById("logout-icon");
+
     if(currentAccount !== undefined)
     {
         accountTextField.textContent = "Logged in as " + currentAccount.id;
@@ -93,11 +95,11 @@ function updateCurrentAccount()
         localStorage.setItem('personData', jsonString);
 
         let btn = document.createElement("button");
+        btn.style.display = 'block';
 
     }
     else
     {
-        let btn = document.getElementById("logout-icon");
         btn.style.display = 'none';
         localStorage.removeItem('personData');
         accountTextField.textContent = "Not logged in";
