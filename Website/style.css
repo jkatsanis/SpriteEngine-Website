@@ -138,7 +138,28 @@ nav ul li:hover {
     font-size: medium;
     font-weight: bolder;
     filter: brightness(1000%);
-
+    margin-left: 50rem;
     text-transform: uppercase;
     font-family:Arial, Helvetica, sans-serif;
+}
+
+#logout-icon {
+    background-color: transparent;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#logout-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+#logout-icon-picture {
+    width: 50px;
+    height: 34px;
+    margin-bottom: 0.5rem;
 }

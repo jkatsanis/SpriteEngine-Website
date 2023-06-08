@@ -1,9 +1,6 @@
-function init()
-{
-    console.log("done");
-}
+
 function search() {
-    var input, filter, details, summary, i, txtValue;
+    let input, filter, details, summary, i, txtValue;
     input = document.getElementById("feature-searcher");
     filter = input.value.toUpperCase();
     details = document.getElementsByTagName("details");
@@ -18,4 +15,3 @@ function search() {
     }
 }
 
-document.addEventListener('DOMContentLoaded',(event) => init());

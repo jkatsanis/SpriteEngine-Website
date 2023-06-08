@@ -78,6 +78,12 @@ class Account{
     }
 }
 
+function logoutButton()
+{
+    currentAccount = undefined;
+    updateCurrentAccount();
+}
+
 function updateCurrentAccount()
 {
     if(currentAccount !== undefined)
@@ -85,15 +91,22 @@ function updateCurrentAccount()
         accountTextField.textContent = "Logged in as " + currentAccount.id;
         const jsonString = JSON.stringify(currentAccount);
         localStorage.setItem('personData', jsonString);
+
+        let btn = document.createElement("button");
+
     }
     else
     {
+        let btn = document.getElementById("logout-icon");
+        btn.style.display = 'none';
+        localStorage.removeItem('personData');
         accountTextField.textContent = "Not logged in";
     }
 }
 
 function init()
 {
+    console.log("init");
     const storedData = localStorage.getItem('personData');
     const parsedData = JSON.parse(storedData);
 
@@ -103,8 +116,35 @@ function init()
     }
 
 
+    addLogoutButton();
     accountTextField = document.getElementById("account-text");
     updateCurrentAccount();
+}
+
+function addLogoutButton() {
+    // Create the button element
+    let button = document.createElement("button");
+    button.id = "logout-icon";
+    button.className = "inline-box";
+    button.onclick = logoutButton;
+
+    // Create the image element
+    let image = document.createElement("img");
+    image.id = "logout-icon-picture";
+    image.src = "pictures/logout.png";
+
+    // Append the image to the button
+    button.appendChild(image);
+
+    // Find the <p id="account-text">Hi</p> element
+    let accountText = document.getElementById("account-text");
+
+    // Create a new line break element
+    let lineBreak = document.createElement("br");
+
+    // Insert the button and line break after the accountText element
+    accountText.parentNode.insertBefore(button, accountText.nextSibling);
+    accountText.parentNode.insertBefore(lineBreak, accountText.nextSibling);
 }
 
 document.addEventListener('DOMContentLoaded',(event) => init());
