@@ -8,5 +8,35 @@
       "id": "IchBinEinKek",
       "password": "Amogus12345#"
     }
+  ],
+  "threads": [
+    {
+      "author": "IchBinEinKek",
+      "dateMessage": "1",
+      "question": "Why yo fdsf",
+      "createdAt": "4.5.2023",
+      "id": 1
+    },
+    {
+      "author": "IchBinEinKek",
+      "dateMessage": "2",
+      "question": "WumWum",
+      "createdAt": "4.5.2023",
+      "id": 2
+    },
+    {
+      "author": "IchBinEinKek",
+      "dateMessage": "3",
+      "question": "BLue",
+      "createdAt": "4.5.2023",
+      "id": 3
+    },
+    {
+      "author": "IchBinEinKek",
+      "dateMessage": "4",
+      "question": "Igus",
+      "createdAt": "4.5.2023",
+      "id": 4
+    }
   ]
 }

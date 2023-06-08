@@ -108,6 +108,9 @@ function updateCurrentAccount()
 
 function init()
 {
+    if (typeof initThreads === 'function') {
+        initThreads();
+    }
     console.log("init");
     const storedData = localStorage.getItem('personData');
     const parsedData = JSON.parse(storedData);

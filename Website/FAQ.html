@@ -11,6 +11,7 @@
   <script src="scripts/ACCOUNTS.js"></script>
   <script src="scripts/FAQ.js"></script>
   <link rel="stylesheet" href="stylePricing.css">
+  <script src="scripts/SERVERMANAGER.js"></script>
 </head>
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="top-NavBar">
@@ -50,10 +51,10 @@
   <div id="faq-display">
     <div class="faq-container faq-container-style">
       <div class="search-bar" style="margin-left: 1rem">
-        <input type="text" id="feature-searcher" onkeyup="search()" placeholder="Search for questions.." >
+        <input type="text" id="question-searcher" onkeyup="searchForThread()" placeholder="Search for questions.." >
       </div>
-      <p class="inline-box ctn-text">5 open ✘</p>
-      <p class="inline-box ctn-text">6 closed &#x2713;</p>
+       <p class="inline-box ctn-text" id="open-text"> open ✘</p>
+      <p class="inline-box ctn-text">0 closed &#x2713;</p>
       <button class="inline-box get-plan-button" id="new-question-button" onclick="createThread()">New Thread</button>
     </div>
     <div id="insert-here"></div>
