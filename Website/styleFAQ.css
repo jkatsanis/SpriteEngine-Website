@@ -63,11 +63,22 @@
     display: block;
 }
 
+#thread-container {
+    display: none;
+}
+
+#leave-thread  {
+    margin-top: 0.5rem;
+    float: right;
+    padding: 0.5rem;
+}
+
 #faq-new-thread {
     height: 31rem;
     width: 100%;
     border: 2px solid black;
     display: none;
+    border-radius: 8px;
 }
 
 #create-content {
@@ -83,4 +94,29 @@
 .form-control:focus {
     outline: none;
     box-shadow: none;
+}
+
+.comment {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.underline {
+    margin-left: 1rem;
+    width: 95%;
+}
+
+.author-info {
+    font-size:  110%;
+    margin: 1rem;
+}
+
+.author-name {
+    font-weight: bolder;
+}
+
+.comment-text {
+    margin-left: 1rem;
+    font-size:  110%;
 }

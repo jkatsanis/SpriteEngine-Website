@@ -1,4 +1,4 @@
-let openThreads = 0;
+let openThreads = -1;
 let threads = [];
 let current_thread = undefined;
 
@@ -9,12 +9,26 @@ function initThreads(){
             let thred = new Thread(data[i].question, data[i].author, data[i].questionContent);
             thred.dateMessage = data[i].dateMessage;
             thred.createdAt = data[i].createdAt;
+            thred.closed = data[i].closed;
+            if(!thred.closed)
+            {
+                increaseOpenCounter();
+            }
             thred.render();
             threads.push(thred);
             openThreads = i;
         }
+        increaseOpenCounter();
         addThreadEventListener();
     })
+    initUi();
+}
+
+function initUi()
+{
+    let btn = document.getElementById("leave-thread").style.display = 'none';
+    modifyThreadDisplayer('none');
+    modifyThreadDisplayerBasesOnCurrentThread('none');
 }
 
 function addThreadEventListener()
@@ -27,6 +41,15 @@ function addThreadEventListener()
             enterThread(threads[i]);
         })
     }
+}
+
+function leaveThread()
+{
+    current_thread.clearDiscussion();
+    current_thread = undefined;
+    modifyThreadDisplayerBasesOnCurrentThread('none');
+    let title = document.getElementById("title");
+    title.textContent =  "Faq";
 }
 
 function createThread(){
@@ -48,6 +71,13 @@ function submit()
     let title = document.getElementById("title-input");
     let content = document.getElementById("issue-input");
 
+    if(title.value === ""
+    || content.value === "")
+    {
+        alert("The content and title field must be filled!");
+        return;
+    }
+
     let thread = new Thread(title.value, currentAccount.id, content.value);
     thread.render();
     modifyThreadDisplayer('none');
@@ -64,6 +94,7 @@ function submit()
 }
 
 function increaseOpenCounter(){
+    console.log(openThreads);
     openThreads++;
     let txt = document.getElementById("open-text");
     let str = String(openThreads) + " open ✘";
@@ -89,12 +120,16 @@ function modifyThreadDisplayer(display){
 
 function modifyThreadDisplayerBasesOnCurrentThread(display)
 {
-    
+    let discussionContainer = document.getElementById("thread-container");
+    discussionContainer.style.display = display;
+
+    let btn = document.getElementById("leave-thread").style.display = display;
 
     let a = display === 'none' ? 'block' : 'none';
 
     let current = document.getElementById("faq-display");
     current.style.display = a;
+
 }
 
 function searchForThread()
@@ -119,11 +154,12 @@ function searchForThread()
 function enterThread(thread)
 {
     let title = document.getElementById("title");
-
     let title_string = thread.question;
-
     title.textContent = title_string;
+
     current_thread = thread;
+    modifyThreadDisplayerBasesOnCurrentThread('block');
+    current_thread.renderDiscussion();
 }
 
 class Thread
@@ -134,9 +170,11 @@ class Thread
     question;
     createdAt;
     questionContent;
+    closed;
 
     constructor(question, autor, questionContent)
     {
+        this.closed = false;
         this.questionContent = questionContent;
         this.question = question;
         this.author = autor;
@@ -175,5 +213,29 @@ class Thread
         let all = document.getElementById("insert-here");
 
         all.innerHTML += html;
+    }
+
+    renderDiscussion()
+    {
+        let discussionContainer = document.getElementById("thread-container");
+        discussionContainer.innerHTML +=
+            ` 
+               <div class="comment">
+                    <div class="author-info">
+                        <p class="inline author-title creation-style">Author: </p>
+                        <p class="inline author-name">${this.author}</p>
+                    </div>
+                   <hr class="underline">
+                    <p class="comment-text">
+                        ${this.questionContent}
+                    </p>
+                </div> 
+            `
+    }
+
+    clearDiscussion()
+    {
+        let discussionContainer = document.getElementById("thread-container");
+        discussionContainer.innerHTML = "";
     }
 }

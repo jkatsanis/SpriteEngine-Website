@@ -163,3 +163,7 @@ nav ul li:hover {
     height: 34px;
     margin-bottom: 0.5rem;
 }
+
+.inline {
+    display: inline;
+}

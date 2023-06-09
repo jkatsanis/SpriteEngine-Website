@@ -7,22 +7,24 @@ let accountTextField = undefined;
 function handleSubmit(){
     let username = document.getElementById("usrReg");
     let password = document.getElementById("pwdReg");
-    if (username.value.length < 6 || password.value.length < 6)
-    {
-        alert("invalid password or username");
-        return;
-    }
-    if (accountExists(username.value, password.value) === true)
-    {
-        alert("username already exists");
-        return;
-    }
-    let account = new Account(username.value, password.value);
-    alert("registered successfully");
-    addAccount(account, () => {
-        console.log("registered successfully");
-    });
-
+    getAllITmes()
+        .then(data => {
+            if (username.value.length < 6 || password.value.length < 6)
+            {
+                alert("invalid password or username");
+                return;
+            }
+            if (accountExists(username.value, password.value, data) === true)
+            {
+                alert("username already exists");
+                return;
+            }
+            let account = new Account(username.value, password.value);
+            alert("registered successfully");
+            addAccount(account, () => {
+                console.log("registered successfully");
+            });
+        });
 }
 
 function handleLogIn()
@@ -140,6 +142,8 @@ function addLogoutButton() {
 
     // Append the image to the button
     button.appendChild(image);
+
+    button.style.marginRight =  "4rem";
 
     // Find the <p id="account-text">Hi</p> element
     let accountText = document.getElementById("account-text");

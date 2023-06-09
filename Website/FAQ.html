@@ -46,14 +46,15 @@
 <body>
 <div class="all-content-container">
   <p class="background-text">Contact: katsanis@18gmai.com</p>
-  <h1 id="title">Faq</h1>
+  <h1 id="title" style="display: inline">Faq</h1>
+  <button id="leave-thread" class="get-plan-button" style="display: inline" onclick="leaveThread()">Leave discussion</button>
   <hr>
   <div id="faq-display">
     <div class="faq-container faq-container-style">
       <div class="search-bar" style="margin-left: 1rem">
         <input type="text" id="question-searcher" onkeyup="searchForThread()" placeholder="Search for questions.." >
       </div>
-       <p class="inline-box ctn-text" id="open-text"> open ✘</p>
+       <p class="inline-box ctn-text" id="open-text">0 open ✘</p>
       <p class="inline-box ctn-text">0 closed &#x2713;</p>
       <button class="inline-box get-plan-button" id="new-question-button" onclick="createThread()">New Thread</button>
     </div>
@@ -72,8 +73,10 @@
       <br>
       <button class="get-plan-button btm-btn" id="submit-btn" onclick="submit()">Submit</button>
       <button class="get-plan-button inline-box btm-btn" id="cancel-btn" onclick="cancelSubmit()">Cancel</button>
-
     </div>
+  </div>
+  <div id="thread-container">
+
   </div>
 
 </body>
