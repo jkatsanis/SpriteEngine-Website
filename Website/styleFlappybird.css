@@ -1,12 +1,9 @@
 
 .background {
-    height: 46.5rem;
-    width: 96rem;
-    background: url('pictures/background.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+    background: url('pictures/background.png');
     background-size: cover;
+    height: 60rem;
+    width: 120rem;
 }
 .bird {
     height: 7rem;
