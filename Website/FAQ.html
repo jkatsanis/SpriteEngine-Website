@@ -54,7 +54,7 @@
       <div class="search-bar" style="margin-left: 1rem">
         <input type="text" id="question-searcher" onkeyup="searchForThread()" placeholder="Search for questions.." >
       </div>
-       <p class="inline-box ctn-text" id="open-text">0 open ✘</p>
+      <p class="inline-box ctn-text" id="open-text">0 open ✘</p>
       <p class="inline-box ctn-text">0 closed &#x2713;</p>
       <button class="inline-box get-plan-button" id="new-question-button" onclick="createThread()">New Thread</button>
     </div>
@@ -75,9 +75,27 @@
       <button class="get-plan-button inline-box btm-btn" id="cancel-btn" onclick="cancelSubmit()">Cancel</button>
     </div>
   </div>
+
+
+
   <div id="thread-container">
 
   </div>
+
+  <div class="mb-4" id="faq-new-Comment">
+    <div></div>
+    <div class="form-group">
+      <textarea type="text" class="form-control" placeholder="type here" id="comment-content"></textarea>
+    </div>
+    <br>
+    <button class="get-plan-button btm-btn mx-0" id="submit-comment-btn">Submit</button>
+    <button class="get-plan-button inline-box btm-btn" id="cancel-comment-btn">Cancel</button>
+  </div>
+
+  <div id="comments-container">
+
+  </div>
+
 </div>
 </body>
 </html>

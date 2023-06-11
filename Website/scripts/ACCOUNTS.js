@@ -20,9 +20,8 @@ function handleSubmit(){
                 return;
             }
             let account = new Account(username.value, password.value);
-            alert("registered successfully");
             addAccount(account, () => {
-                console.log("registered successfully");
+                alert("registered successfully");
             });
         });
 }
@@ -113,7 +112,6 @@ function init()
     if (typeof initThreads === 'function') {
         initThreads();
     }
-    console.log("init");
     const storedData = localStorage.getItem('personData');
     const parsedData = JSON.parse(storedData);
 

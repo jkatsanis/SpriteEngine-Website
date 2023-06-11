@@ -10,6 +10,7 @@ function initThreads(){
             thred.dateMessage = data[i].dateMessage;
             thred.createdAt = data[i].createdAt;
             thred.closed = data[i].closed;
+            thred.comments = data[i].comments;
             if(!thred.closed)
             {
                 increaseOpenCounter();
@@ -27,6 +28,7 @@ function initThreads(){
 function initUi()
 {
     let btn = document.getElementById("leave-thread").style.display = 'none';
+    document.getElementById("faq-new-Comment").style.display = 'none';
     modifyThreadDisplayer('none');
     modifyThreadDisplayerBasesOnCurrentThread('none');
 }
@@ -72,7 +74,7 @@ function submit()
     let content = document.getElementById("issue-input");
 
     if(title.value === ""
-    || content.value === "")
+        || content.value === "")
     {
         alert("The content and title field must be filled!");
         return;
@@ -86,7 +88,6 @@ function submit()
 
     addThreadEventListener();
     addQuestionToDataBase(thread, () => {
-        console.log("Nice");
     })
 
     title.value = "";
@@ -94,7 +95,6 @@ function submit()
 }
 
 function increaseOpenCounter(){
-    console.log(openThreads);
     openThreads++;
     let txt = document.getElementById("open-text");
     let str = String(openThreads) + " open ✘";
@@ -159,7 +159,7 @@ function enterThread(thread)
 
     current_thread = thread;
     modifyThreadDisplayerBasesOnCurrentThread('block');
-    current_thread.renderDiscussion();
+    current_thread.renderDiscussion(thread);
 }
 
 class Thread
@@ -170,6 +170,7 @@ class Thread
     question;
     createdAt;
     questionContent;
+    comments;
     closed;
 
     constructor(question, autor, questionContent)
@@ -178,6 +179,7 @@ class Thread
         this.questionContent = questionContent;
         this.question = question;
         this.author = autor;
+        this.comments = [];
         Thread.threads++;
         this.dateMessage = `${Thread.threads}`;
 
@@ -218,6 +220,11 @@ class Thread
     renderDiscussion()
     {
         let discussionContainer = document.getElementById("thread-container");
+        let commentContainer = document.getElementById("comments-container");
+
+        discussionContainer.innerHTML = "";
+        commentContainer.innerHTML = "";
+
         discussionContainer.innerHTML +=
             ` 
                <div class="comment">
@@ -229,13 +236,79 @@ class Thread
                     <p class="comment-text">
                         ${this.questionContent}
                     </p>
-                </div> 
-            `
+                </div>
+                <hr>
+                <h1>Comments:</h1>
+                <button class="get-plan-button p-2 mb-3 mx-0" style="display: block" id="add-comment">create comment</button>
+            `;
+        for (let comment of this.comments) {
+            commentContainer.innerHTML +=
+                ` 
+               <div class="comment mb-3">
+                    <div class="author-info">
+                        <p class="inline author-title creation-style">Author: </p>
+                        <p class="inline author-name">${comment.author}</p>
+                    </div>
+                   <hr class="underline">
+                    <p class="comment-text">
+                        ${comment.content}
+                    </p>
+                </div>
+                `;
+        }
+        this.handleCommentBtn();
+    }
+    handleCommentBtn(){
+        let addCommentBtn = document.getElementById("add-comment");
+        addCommentBtn.addEventListener("click", ()=>{
+            if (currentAccount ===undefined){
+                alert("not logged in");
+                return;
+            }
+            document.getElementById("faq-new-Comment").style.display = 'block';
+            handleComment(this);
+        });
     }
 
     clearDiscussion()
     {
         let discussionContainer = document.getElementById("thread-container");
         discussionContainer.innerHTML = "";
+        let commentContainer = document.getElementById("comments-container");
+        commentContainer.innerHTML = "";
     }
+    addComment(comment)
+    {
+        this.comments.push(comment);
+    }
+}
+function handleComment(thread){
+    let commentContent = document.getElementById("comment-content");
+    let submitComment = document.getElementById("submit-comment-btn");
+    let cancelComment = document.getElementById("cancel-comment-btn");
+
+    submitComment.addEventListener("click", ()=>{
+        if (commentContent.value === ""){
+            return;
+        }
+
+        let comment = new Comment(currentAccount.id, commentContent.value);
+        thread.addComment(comment);
+        commentContent.value = "";
+        document.getElementById("faq-new-Comment").style.display = 'none';
+        updateComments(thread.dateMessage, thread, () => {});
+        thread.renderDiscussion();
+    });
+    cancelComment.addEventListener("click", ()=>{
+        document.getElementById("faq-new-Comment").style.display = 'none';
+    });
+}
+class Comment{
+    author;
+    content;
+    constructor(author, content) {
+        this.author = author;
+        this.content = content;
+    }
+
 }

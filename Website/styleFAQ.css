@@ -120,3 +120,12 @@
     margin-left: 1rem;
     font-size:  110%;
 }
+
+.thread:hover {
+    background-color: lightgrey;
+}
+
+.comment:hover {
+    background-color: lightgrey;
+}
+

@@ -14,6 +14,7 @@
  }
 
 .previewPic {
+    margin-top: 1rem;
     position: absolute;
     top: 6rem;
     right: 2rem;
@@ -24,12 +25,13 @@
     margin-right: 5rem;
     text-align: left;
     display: inline-block;
-    width: 70rem;
+    width: 80rem;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     transition: all 0.3s ease-in-out;
+    height: 25rem;
 }
 
 .box:hover {
