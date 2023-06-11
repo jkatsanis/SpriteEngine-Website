@@ -16,11 +16,11 @@ message.classList.add('messageStyle');
 
 document.addEventListener('keydown', (e) => {
 
-    if(e.key == 'Enter' && game_state != 'Play'){
+    if(e.key === 'Enter' && game_state !== 'Play'){
         document.querySelectorAll('.pipePiece').forEach((e) => {
             e.remove();
         });
-        score_val.innerHTML = 0;
+        score_val.innerHTML = '0';
         img.style.display = 'block';
         game_state = 'Play';
         message.innerHTML = " ";
@@ -32,7 +32,7 @@ document.addEventListener('keydown', (e) => {
 
 function play(){
     function move() {
-        if (game_state == 'Play') {
+        if (game_state === 'Play') {
 
 
             let pipePiece = document.querySelectorAll('.pipePiece');
@@ -46,12 +46,11 @@ function play(){
                     if (bird_props.left < pipePiece_props.left + pipePiece_props.width && bird_props.left + bird_props.width > pipePiece_props.left && bird_props.top < pipePiece_props.top + pipePiece_props.height && bird_props.top + bird_props.height > pipePiece_props.top) {
                         game_state = 'End';
                         message.innerHTML = 'Game Over'+ '<br>Press Enter To Restart';
-                        score_val.innerHTML = 0;
+                        score_val.innerHTML = '0';
                         message.classList.add('messageStyle');
-                        return;
                     } else {
-                        if (pipePiece_props.right < bird_props.left && pipePiece_props.right + move_speed >= bird_props.left && element.increase_score == '1') {
-                            score_val.innerHTML = +score_val.innerHTML + 1;
+                        if (pipePiece_props.right < bird_props.left && pipePiece_props.right + move_speed >= bird_props.left && element.increase_score === '1') {
+                            score_val.innerHTML =+ score_val.innerHTML + 1;
                         }
                         element.style.left = pipePiece_props.left - move_speed + 'px';
                     }
@@ -64,17 +63,17 @@ function play(){
 
     let birdY = 0;
     function apply_gravity(){
-        if(game_state != 'Play') return;
+        if(game_state !== 'Play') return;
         birdY = birdY + grativy;
         document.addEventListener('keydown', (e) => {
-            if(e.key == 'ArrowUp'){
+            if(e.key === 'ArrowUp'){
                 img.src = 'pictures/Terence_bird_AB2-removebg-preview.png';
                 birdY = -10.5;
             }
         });
 
         document.addEventListener('keyup', (e) => {
-            if(e.key == 'ArrowUp'){
+            if(e.key === 'ArrowUp'){
                 img.src = 'pictures/Terence_bird_AB2-removebg-preview.png';
             }
         });
@@ -97,7 +96,7 @@ function play(){
     let pipe_gap = 55;
 
     function create_pipe(){
-        if(game_state != 'Play') return;
+        if(game_state !== 'Play') return;
 
         if(pipeGape > 115){
             pipeGape = 0;
