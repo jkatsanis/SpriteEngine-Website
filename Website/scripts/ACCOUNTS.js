@@ -97,7 +97,7 @@ function updateCurrentAccount()
 
         let btn = document.createElement("button");
         btn.style.display = 'block';
-
+        document.getElementById("logout-icon").style.display = 'block';
     }
     else
     {
@@ -112,6 +112,10 @@ function init()
     if (typeof initThreads === 'function') {
         initThreads();
     }
+    if (typeof initCodeHighlight === 'function') {
+        initCodeHighlight();
+    }
+
     const storedData = localStorage.getItem('personData');
     const parsedData = JSON.parse(storedData);
 
@@ -129,6 +133,7 @@ function init()
 function addLogoutButton() {
     // Create the button element
     let button = document.createElement("button");
+
     button.id = "logout-icon";
     button.className = "inline-box";
     button.onclick = logoutButton;

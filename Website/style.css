@@ -171,3 +171,7 @@ nav ul li:hover {
 #download-link {
     font-size: 150%;
 }
+
+.nav-item {
+    width: 7rem;
+}

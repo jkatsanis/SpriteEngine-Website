@@ -185,13 +185,11 @@ class Thread
 
         const currentDate = new Date();
 
-        const day = String(currentDate.getDay());
-        const month = String(currentDate.getMonth());
-        const year = currentDate.getFullYear();
-        const dateString = `${day}.${month}.${year}`;
-
-        this.createdAt = dateString;
-
+        let day = currentDate.getDate();
+        let month = currentDate.getMonth() + 1;
+        let year = currentDate.getFullYear();
+        let formattedDate = day + '.' + month + '.' + year;
+        this.createdAt = formattedDate;
     }
 
     render()
