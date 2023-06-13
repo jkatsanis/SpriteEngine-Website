@@ -138,7 +138,6 @@ nav ul li:hover {
     font-size: medium;
     font-weight: bolder;
     filter: brightness(1000%);
-    margin-left: 50rem;
     text-transform: uppercase;
     font-family:Arial, Helvetica, sans-serif;
 }

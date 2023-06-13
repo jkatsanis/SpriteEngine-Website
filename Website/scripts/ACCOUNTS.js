@@ -115,7 +115,9 @@ function init()
     if (typeof initCodeHighlight === 'function') {
         initCodeHighlight();
     }
-
+    if (typeof initSpaceShooter === 'function') {
+        initSpaceShooter();
+    }
     const storedData = localStorage.getItem('personData');
     const parsedData = JSON.parse(storedData);
 
@@ -146,7 +148,7 @@ function addLogoutButton() {
     // Append the image to the button
     button.appendChild(image);
 
-    button.style.marginRight =  "4rem";
+    button.style.marginLeft =  "-30rem";
 
     // Find the <p id="account-text">Hi</p> element
     let accountText = document.getElementById("account-text");
